@@ -1,0 +1,70 @@
+{% extends "./base.html" %}
+{% block titulo %}
+    {{title}}
+{% endblock %}
+
+{% block contenido %}
+    <div class = "container">
+        <div class="row">
+            <h3>Contacto</h3>
+        </div>
+        <div class="row mb-3">
+            <div class="col-3"></div>
+            <div class="col-6" style="  border-style:solid          ;
+                                        border-radius:10px          ;
+                                        border-width: 1px           ;
+                                        border-color: grey        ;
+                                        background-color: bisque  ;" >
+
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <!-- {{ form }} -->
+                    {{ form.non_field_errors }}
+                    
+                        <div class = "mb-3 text-left">
+                            <label for = "{{ form.customer_name.id_for_label }}" class = "form-label">
+                                {{ form.customer_name.label_tag }}
+                            </label>
+                            <div>
+                                {{ form.customer_name }}
+                            </div>
+                            <div class = "text-danger">
+                                {{ form.customer_name.errors }}
+                            </div>
+                        </div>
+
+                        <div class = "mb-3 text-left">
+                            <label for = "{{ form.customer_email.id_for_label }}" class = "form-label">
+                                {{ form.customer_email.label_tag }}
+                            </label>
+                            <div>
+                                {{ form.customer_email }}
+                            </div>
+                            <div class = "text-danger">
+                                {{ form.customer_email.errors }}
+                            </div>
+                        </div>
+
+                        <div class = "mb-3 text-left">
+                            <label for = "{{ form.customer_message.id_for_label }}" class = "form-label">
+                                {{ form.message.label_tag }}
+                            </label>
+                            <div>
+                                {{ form.message }}
+                            </div>
+                            <div class = "text-danger">
+                                {{ form.message.errors }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary btn-sm" style="background-color: darkslateblue;">Enviar</button>
+                        </div>
+
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+{% endblock %}
+

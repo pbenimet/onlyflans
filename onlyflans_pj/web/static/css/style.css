@@ -1,0 +1,30 @@
+body    {
+    color: darkslateblue"
+}
+
+#header{
+    background-color:chocolate ;
+}
+
+#header img {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 10vh;
+        object-fit: cover;
+    }
+
+#navbar {
+    background-color:khaki;
+    padding-left: 40px;
+}
+
+#contenido  {
+    background-color: white;
+    color:darkslateblue;
+    padding-left: 40px;
+}
+
+
+
+
+

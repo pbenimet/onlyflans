@@ -1,0 +1,2 @@
+su pbeni, caviar00
+/admin/login/?next=/admin/
